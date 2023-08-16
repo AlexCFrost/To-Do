@@ -23,8 +23,8 @@ todolist.innerHTML = null
         // toDOList.append(new_list)
 
         // todolist.innerHTML += "<li>" + arr[i] + "</li>"
-        todolist.innerHTML += `<li> ${arr[i]} <a onclick = editlist(${i}),deletelist(${i})>Edit</a></li>`
-        todolist.innerHTML += `<li> ${arr[i]} <a onclick = deletelist(${i})>x</a> </li>`
+        todolist.innerHTML += `<li> ${arr[i]} <a onclick = editlist(${i})>Edit</a><a onclick = deletelist(${i})>X</a> </li>`
+        // todolist.innerHTML += `<li> ${arr[i]} </li>`
     }
 }
 
@@ -32,8 +32,10 @@ todolist.innerHTML = null
 
 function editlist(index){
     let editedText = prompt("The New Title")
-    arr[index] = editedText
-    appendList()
+    if(editedText !=null && editedText!=""){
+        arr[index] = editedText
+        appendList()
+    }
 }
 
 //delete functionality
